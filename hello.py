@@ -42,3 +42,10 @@ def index():
         session['email'] = form.email.data
         return redirect(url_for('index'))
     return render_template('index.html', form=form, name=session.get('name'), email=session.get('email'))
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')
+    
+# docker commands:
+# docker build -t funnybunnym/flask-app:v1.0.10 .
+# docker run -p 5000:5000 funnybunnym/flask-app:v1.0.10
